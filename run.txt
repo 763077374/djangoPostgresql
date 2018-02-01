@@ -17,3 +17,10 @@ DATABASES = {
 
 http://localhost:9000
 
+docker-compose down
+docker images
+移除镜像
+docker rmi  djangopostgresql_web:latest postgres:latest  python:3
+docker ps -a | grep  djangopostgresql_web
+docker rm
+

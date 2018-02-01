@@ -12,7 +12,7 @@ services:
       - ./data/postgresql:/var/lib/postgresql
   web:
     build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+#    command: python3 manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
     depends_on:
