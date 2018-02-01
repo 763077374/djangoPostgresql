@@ -1,0 +1,19 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRESQL_ROOT_USER: root
+      POSTGRESQL_ROOT_PASSWORD: 123456
+      POSTGRESQL_DATABASE: books
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql
+  web:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
